@@ -1,0 +1,111 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Shopping Site</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+    h1 {
+        text-align: center;
+        padding: 20px;
+    }
+    #cartbox {
+        background: #fff;
+        padding: 15px;
+        margin: 20px auto;
+        width: 200px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        font-size: 18px;
+        text-align: center;
+    }
+    .container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 30px;
+    }
+    .productbox {
+        background: #fff;
+        padding: 20px;
+        width: 200px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+    img {
+        width: 100%;
+        height: 150px;
+        background: #ddd;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+    button {
+        background: #28a745;
+        color: #fff;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    button:hover {
+        background: #218838;
+    }
+</style>
+</head>
+
+<body>
+
+    <h1>Simple Shopping Site</h1>
+
+    <div id="cartbox">
+        Cart Items: <span id="cart-count">0</span> <br>
+        Total: ₹<span id="total-count">0</span>
+    </div>
+
+    <div class="container">
+        <div class="productbox">
+            <img src="new1.jpg">
+            <h3>iPhone</h3>
+            <p>₹30000</p>
+            <button onclick="AddToCart(30000)">Add To Cart</button>
+        </div>
+
+        <div class="productbox">
+            <img src="new2.jpg">
+            <h3>Vivo</h3>
+            <p>₹20000</p>
+            <button onclick="AddToCart(20000)">Add To Cart</button>
+        </div>
+
+        <div class="productbox">
+            <img src="new3.jpg">
+            <h3>samsung</h3>
+            <p>₹100000</p>
+            <button onclick="AddToCart(100000)">Add To Cart</button>
+        </div>
+    </div>
+
+<script>
+    let cartcount = 0;
+    let totalprice = 0;
+
+    function AddToCart(price) {
+        cartcount++;
+        totalprice += price;
+
+        document.getElementById("cart-count").innerText = cartcount;
+        document.getElementById("total-count").innerText = totalprice;
+    }
+</script>
+
+</body>
+</html>
